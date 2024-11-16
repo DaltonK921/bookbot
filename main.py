@@ -5,7 +5,7 @@ def main():
     characters = character_count(text)
     print(text)
     print(f"Word count: {words}")
-    print(f"Character counts: {characters}")
+    character_report(characters)
 
 def get_book_text(path):
     with open(path) as f:
@@ -24,5 +24,11 @@ def character_count(text):
         else:
             characters[character] = 1
     return characters
+
+def character_report(characters):
+    for char in characters:
+        print(f"The '{char}' character was found {characters[char]} times")
+    print("--- End Report ---")
+
 
 main()
